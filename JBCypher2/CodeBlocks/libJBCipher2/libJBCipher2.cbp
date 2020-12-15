@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libJBCipher2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/JBCipher2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Weffc++" />
+					<Add option="-std=c++11" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="src" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/JBCipher2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-march=nocona" />
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add option="-Wall" />
+					<Add directory="include" />
+					<Add directory="src" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Shared">
+				<Option output="bin/Shared/JBCipher2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Shared/" />
+				<Option object_output="obj/Shared/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-march=nocona" />
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add option="-Wall" />
+					<Add option="-fPIC" />
+					<Add option="-shared" />
+					<Add directory="include" />
+					<Add directory="src" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="include/Arc4JB.h" />
+		<Unit filename="include/BitMovers.h" />
+		<Unit filename="include/BlockDescrambler.h" />
+		<Unit filename="include/BlockScrambler.h" />
+		<Unit filename="include/JBCipher2.h" />
+		<Unit filename="src/Arc4JB.cpp" />
+		<Unit filename="src/BlockDescrambler.cpp" />
+		<Unit filename="src/BlockInput.cpp" />
+		<Unit filename="src/BlockOutput.cpp" />
+		<Unit filename="src/BlockScrambler.cpp" />
+		<Unit filename="src/BlockThroughput.cpp" />
+		<Unit filename="src/IRandomSource.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
