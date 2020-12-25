@@ -1,9 +1,9 @@
 # JBCypher1, JBCypher2, and JBCypher3
 
-A pair of unvetted block cyphers I created just to see if I could 
+A pair of unvetted block ciphers I created just to see if I could 
 design and code my own original cryptography -- not recommended for
 any serious use.  Probably the best idea in them is under-untilized 
-in favor of inferior procedures.
+in favor of inferior procedures:
 
 1. First, it shuffle bytes within the block (perhap superflous)
 2. Next, it shuffles bits between bytes (each bit sent to a random byte)
@@ -11,7 +11,7 @@ in favor of inferior procedures.
 4. The xors each byte with a random byte (much like a stream cipher)
 5. And finally, xors each byte with another, randomly seleced byte in the block
 
-These cyphers will got through a series of manipulations, including 
+These ciphers will got through a series of manipulations, including 
 shuffling bytes, shuffling bits between bytes, rotating bits within 
 byte, xoring bytes with random numbers, and xoring bytes with other 
 randomly selected bytes in the same block.  Blocks used are 2048 bit, 
@@ -25,6 +25,14 @@ generator to determine which byte is used next.  The combinations
 of the two generators allows 1748 bit of entropy. Keys may be of 
 any length.
 
+The difference between version 1 and 2 is in how they handle the ends 
+of files and blocks.  The first takes note of the bytes in the last 
+block and stores it as the first byte of the encrypted file.  The 
+second technically only encryptes 2040 bits of data per block, using 
+the 256th byte to record the number of bits in the byte; this is to 
+allow streaming of data rather than being limited to use on local files 
+of pre-known size.
+
 In retrospect, step (1) should not have been used, as it is superflous 
 with step (2); step (5) should have been repeated more, perhap using 
 sixteen rather than twelve numbers per encrypted byte to allow six 
@@ -36,21 +44,13 @@ procedure of shuffling bytes before shuffling bits and makes better use
 of the best idea in the algorithm -- one with adds both diffusion and 
 confusion at the individual bit level.
 
-The difference between the two generators is in how they handle the ends 
-of files and blocks.  The first takes note of the bytes in the last 
-block and stores it as the first byte of the encrypted file.  The 
-second technically only encryptes 2040 bits of data per block, using 
-the 256th byte to record the number of bits in the byte; this is to 
-allow streaming of data rather than being limited to use on local files 
-of pre-known size.
-
 JUST TO BE SURE IT'S UNDERSTOOD: I AM NOT A CRYPTOGRAPHER, AND DID THIS 
 TO SEE IF I COULD AFTER TAKING BASIC CLASS IN SECURITY FOR SECURITY+ 
 CERTIFICATION. THIS HAS NOT BEEN VETTED. I WOULDN'T HAVE A CLUE HOW TO 
-CRACK IT BUT AN EXPERT MIGHT.  THIS SHOULD NOT BE USED FOR REAL-WORLD 
-SECURITY PURPOSES OR ANYTHING PARTICULARLY IMPORTANT.  IT IS AN AMATURE 
-PROJECT BY A NOVICE EXPERIMENTING TO SEE IF HE COULD MAKE A CYPHER, 
-NOTHING MORE!
+CRACK IT OR WHERE TO EVEN BEGIN TRYING, BUT AN EXPERT MIGHT FIND A WAY. 
+THIS SHOULD NOT BE USED FOR REAL-WORLD SECURITY PURPOSES OR ANYTHING 
+PARTICULARLY IMPORTANT.  IT IS AN AMATURE PROJECT BY A NOVICE EXPERIMENTING 
+TO SEE IF HE COULD MAKE MY OWN BLOCK CIPHER, NOTHING MORE!
 
 This software is under the MIT License:
 
