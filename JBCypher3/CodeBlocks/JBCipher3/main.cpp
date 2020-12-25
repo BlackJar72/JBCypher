@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 
 	if (argc < 5) {
 		std::cerr << std::endl << "ERROR!" << std::endl;
-		std::cerr << "Usage: jbcipher3 [e / d] [key / seed] [filename] [outfile]"
+		std::cerr << "Usage: jbc3 [e / d] [key / seed] [filename] [outfile]"
 			<< std::endl << std::endl;
 		return 1;
 	}
