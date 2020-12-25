@@ -29,7 +29,7 @@ The difference between version 1 and 2 is in how they handle the ends
 of files and blocks.  The first takes note of the bytes in the last 
 block and stores it as the first byte of the encrypted file.  The 
 second technically only encryptes 2040 bits of data per block, using 
-the 256th byte to record the number of bits in the byte; this is to 
+the 256th byte to record the number of real bytes in the block; this is to 
 allow streaming of data rather than being limited to use on local files 
 of pre-known size.
 
