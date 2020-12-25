@@ -13,15 +13,19 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="src" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/JBCypher3" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/jbc3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="src" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -31,6 +35,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Arc4JB.h" />
+		<Unit filename="include/BitMovers.h" />
+		<Unit filename="include/BlockDescrambler.h" />
+		<Unit filename="include/BlockInput.h" />
+		<Unit filename="include/BlockOutput.h" />
+		<Unit filename="include/BlockScrambler.h" />
+		<Unit filename="include/BlockThroughput.h" />
+		<Unit filename="include/FileEncryptor.h" />
+		<Unit filename="include/IRandomSource.h" />
+		<Unit filename="include/JBCipher2.h" />
+		<Unit filename="src/Arc4JB.cpp" />
+		<Unit filename="src/BlockDescrambler.cpp" />
+		<Unit filename="src/BlockInput.cpp" />
+		<Unit filename="src/BlockOutput.cpp" />
+		<Unit filename="src/BlockScrambler.cpp" />
+		<Unit filename="src/BlockThroughput.cpp" />
+		<Unit filename="src/FileEncryptor.cpp" />
+		<Unit filename="src/IRandomSource.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

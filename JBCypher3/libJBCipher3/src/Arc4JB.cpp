@@ -43,12 +43,14 @@ unsigned long long stringHash(char* data) {
     return out;
 }
 
-int modRight(int n, int m) {
-    int out = n % m;
-    if(out < 0) {
-        out += m;
-    }
-    return out;
+
+inline int modRight(int n, int m) {
+    return (n & 0x7fffffff) % m;
+    //int out = n % m;
+    //if(out < 0) {
+    //    out += m;
+    //}
+    //return out;
 }
 
 
