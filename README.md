@@ -1,4 +1,4 @@
-# JBCypher1 and JBCypher2 
+# JBCypher1, JBCypher2, and JBCypher3
 
 A pair of unvetted block cyphers I created just to see if I could 
 design and code my own original cryptography -- not recommended for
@@ -29,6 +29,12 @@ In retrospect, step (1) should not have been used, as it is superflous
 with step (2); step (5) should have been repeated more, perhap using 
 sixteen rather than twelve numbers per encrypted byte to allow six 
 passes rather than one of step (5).
+
+JBCypher3 uses steps 2-4 then repeats step 5 for a total of six times; 
+otherwise its the same as JBCypher2. This removes what was a superfluous 
+procedure of shuffling bytes before shuffling bits and makes better use 
+of the best idea in the algorithm -- one with adds both diffusion and 
+confusion at the individual bit level.
 
 The difference between the two generators is in how they handle the ends 
 of files and blocks.  The first takes note of the bytes in the last 
