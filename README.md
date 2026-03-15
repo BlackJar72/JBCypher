@@ -1,5 +1,7 @@
 # JBCypher1, JBCypher2, and JBCypher3
 
+## Do to the flurry of new age verification laws I do not have the infrastructure to comply with, I will not be making or working on videogames or any other standalone software applications. ##
+
 A pair of unvetted block ciphers I created just to see if I could 
 design and code my own original cryptography -- not recommended for
 any serious use.  Probably the best idea in them is under-untilized 
